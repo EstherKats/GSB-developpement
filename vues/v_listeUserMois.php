@@ -5,7 +5,7 @@
     </div>
     <div class="col-md-4">
 
-        <form action="test2.php"   action="index.php?uc=validerFrais&action=voirFrais" 
+        <form action="index.php?uc=validerFrais&action=voirFrais" 
               method="post" role="form">
             <select name="user" id="user_select" class="form-control">
              <?php 
