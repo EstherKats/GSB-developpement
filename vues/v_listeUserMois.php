@@ -1,3 +1,4 @@
+
 <h2>Valider les frais</h2>
 <div class="row">
     <div class="col-md-4">
@@ -7,7 +8,7 @@
         <form action="index.php?uc=validerFrais&action=voirFrais" 
               method="post" role="form">
             <select name="user" id="user_select" class="form-control">
-             <?php 
+             <?php
                 foreach ($listeUser as $visiteur){ ?>
                     <option value= <?= $visiteur['id']  ?> > <?= $visiteur['prenom'] ?>  <?= $visiteur['nom'] ?> </option>
             <?php } ?>

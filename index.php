@@ -47,3 +47,5 @@ case 'deconnexion':
     break;
 }
 require 'vues/v_pied.php';
+
+?>

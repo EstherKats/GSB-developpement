@@ -28,10 +28,12 @@
     </head>
     <body>
         <div class="container">
-            <?php
+        <?php
             $uc = filter_input(INPUT_GET, 'uc', FILTER_SANITIZE_STRING);
             if ($estConnecte) {
-                ?>
+                $role = $_SESSION['role'];
+                if ($role == 0){
+            ?>
             <div class="header">
                 <div class="row vertical-align">
                     <div class="col-md-4">
@@ -61,11 +63,6 @@
                                     Afficher mes fiches de frais
                                 </a>
                             </li>
-                            <li <?php if ($uc == 'validerFrais') { ?>class="active"<?php } ?>>
-                                <a href="index.php?uc=validerFrais&action=selectUser">
-                                    Valider les frais
-                                </a>
-                            </li>
                             <li 
                             <?php if ($uc == 'deconnexion') { ?>class="active"<?php } ?>>
                                 <a href="index.php?uc=deconnexion&action=demandeDeconnexion">
@@ -77,14 +74,62 @@
                     </div>
                 </div>
             </div>
-            <?php
-            } else {
-                ?>   
-                <h1>
-                    <img src="./images/logo.jpg"
-                         class="img-responsive center-block"
-                         alt="Laboratoire Galaxy-Swiss Bourdin"
-                         title="Laboratoire Galaxy-Swiss Bourdin">
-                </h1>
                 <?php
-            }
+                } if ($role == 1) {
+                    ?>
+
+                <div class="header">
+                    <div class="row vertical-align">
+                        <div class="col-md-4">
+                            <h1>
+                                <img src="./images/logo.jpg" class="img-responsive" 
+                                    alt="Laboratoire Galaxy-Swiss Bourdin" 
+                                    title="Laboratoire Galaxy-Swiss Bourdin">
+                            </h1>
+                        </div>
+                        <div class="col-md-8">
+                            <ul class="nav nav-pills pull-right" role="tablist">
+                            <li <?php if (!$uc || $uc == 'accueil') { ?>class="active" <?php } ?>>
+                                <a href="index.php">
+                                    <span class="glyphicon glyphicon-home"></span>
+                                    Accueil
+                                </a>
+                            </li>
+                            <li <?php if ($uc == 'validerFrais') { ?>class="active"<?php } ?>>
+                                <a href="index.php?uc=validerFrais&action=selectUser">
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                    Valider fiche de frais
+                                </a>
+                            </li>
+                            <li <?php if ($uc == 'etatFrais') { ?>class="active"<?php } ?>>
+                                <a href="index.php?uc=etatFrais&action=selectionnerMois">
+                                    <span class="glyphicon glyphicon-list-alt"></span>
+                                    Suivre le paiement
+                                </a>
+                            </li>
+                            <li 
+                            <?php if ($uc == 'deconnexion') { ?>class="active"<?php } ?>>
+                                <a href="index.php?uc=deconnexion&action=demandeDeconnexion">
+                                    <span class="glyphicon glyphicon-log-out"></span>
+                                    Déconnexion
+                                </a>
+                            </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <?php
+                }
+                ?>
+        <?php
+        } else {
+        ?>   
+            <h1>
+                <img src="./images/logo.jpg"
+                     class="img-responsive center-block"
+                     alt="Laboratoire Galaxy-Swiss Bourdin"
+                     title="Laboratoire Galaxy-Swiss Bourdin">
+            </h1>
+        <?php
+        }
+    

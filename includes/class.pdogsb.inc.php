@@ -94,7 +94,7 @@ class PdoGsb
     {
         $requetePrepare = PdoGsb::$monPdo->prepare(
             'SELECT visiteur.id AS id, visiteur.nom AS nom, '
-            . 'visiteur.prenom AS prenom '
+            . 'visiteur.prenom AS prenom, visiteur.role AS role '
             . 'FROM visiteur '
             . 'WHERE visiteur.login = :unLogin AND visiteur.mdp = :unMdp'
         );
@@ -410,6 +410,32 @@ class PdoGsb
      * @return un tableau associatif de clé un mois -aaaamm- et de valeurs
      *         l'année et le mois correspondant
      */
+
+    public function getlibelle($idFrais)
+    {
+        $requetePrepare = PdoGSB::$monPdo->prepare(
+            'SELECT libelle 
+            FROM lignefraishorsforfait
+            WHERE lignefraishorsforfait.id = :unIdFrais'
+            );
+        $requetePrepare->bindParam(':unIdFrais', $idFrais, PDO::PARAM_STR);
+        $requetePrepare->execute();
+        $libelle_actuel = $requetePrepare->fetch();
+        return $libelle_actuel;
+    }
+    public function refuserFrais($idFrais, $libelle_actuel)
+    {
+        $libelle=$libelle_actuel['libelle'];
+        $new_libelle = "Refuser: ".$libelle; 
+        $requetePrepare = PdoGSB::$monPdo->prepare(
+            'UPDATE lignefraishorsforfait
+            SET libelle = :newLibelle 
+            WHERE lignefraishorsforfait.id = :unIdFrais'
+            );
+        $requetePrepare->bindParam(':unIdFrais', $idFrais, PDO::PARAM_STR);
+        $requetePrepare->bindParam(':newLibelle', $new_libelle, PDO::PARAM_STR);
+        $requetePrepare->execute();    
+    }
     public function getLesMoisDisponibles($idVisiteur)
     {
         $requetePrepare = PdoGSB::$monPdo->prepare(
@@ -489,8 +515,10 @@ class PdoGsb
 
     public function selectUser(){
         $requetePrepare = PdoGSB::$monPdo->prepare(
-            'SELECT *' 
-            . 'FROM visiteur ');
+            'SELECT * 
+             FROM visiteur
+             WHERE visiteur.role = 0 '
+        );
         $requetePrepare->execute();
         return $requetePrepare->fetchAll();
     }
