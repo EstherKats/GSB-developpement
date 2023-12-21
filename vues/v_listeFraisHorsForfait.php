@@ -118,13 +118,20 @@ if ($role == 1){
                     <td><a href="index.php?uc=validerFrais&action=refuserFrais&idFrais=<?php echo $id ?>" 
                            onclick="return confirm('Voulez-vous vraiment supprimer ce frais?');">Supprimer ce frais</a></td>
                 </tr>
-                <?php
-            }
-            ?>
-            </tbody>  
+                <?php } ?>
+            </tbody>
+
         </table>
     </div>
 </div>
 
-
+<div class="row">
+    <div class="col-md-4">
+                <form action="index.php?uc=validerFrais&action=validerFiche" 
+                method="post" role="form">
+                    <button class="btn btn-success" type="submit">Valider cette fiche</button>
+                </form>
+    </div>
+</div>
 <?php } ?>
+

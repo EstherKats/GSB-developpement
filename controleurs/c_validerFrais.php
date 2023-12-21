@@ -47,15 +47,30 @@ case 'actualiserFraisForfait':
     break;
 
 case 'refuserFrais':
+
     $idVisiteur = $_SESSION['visiteur_selectionne'];
     $mois = $_SESSION['mois_selectionne'];
     $idFrais = filter_input(INPUT_GET, 'idFrais', FILTER_SANITIZE_STRING);
     $libelle_actuel = $pdo-> getlibelle($idFrais);
-    $pdo->refuserFrais($idFrais, $libelle_actuel);
+    $libelle=$libelle_actuel['libelle'];
+    $needle = "Refusé:" ;
+    if (str_contains($libelle, $needle)){
+        require 'vues\v_notifRefuse.php';
+    } else {
+        $pdo->refuserFrais($idFrais, $libelle_actuel);
+    }
     $lesFraisHorsForfait = $pdo->getLesFraisHorsForfait($idVisiteur, $mois);
     $lesFraisForfait = $pdo->getLesFraisForfait($idVisiteur, $mois);
     require 'vues\v_listeFraisForfait.php';
     require 'vues\v_listeFraisHorsForfait.php';
+    break;
+
+case 'validerFiche':
+    $idVisiteur = $_SESSION['visiteur_selectionne'];
+    $mois = $_SESSION['mois_selectionne'];
+    $etat = 'VA';
+    $pdo->majEtatFicheFrais($idVisiteur, $mois, $etat);
+    require 'vues\v_validation.php';
     break;
 }
 ?>

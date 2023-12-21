@@ -426,7 +426,7 @@ class PdoGsb
     public function refuserFrais($idFrais, $libelle_actuel)
     {
         $libelle=$libelle_actuel['libelle'];
-        $new_libelle = "Refuser: ".$libelle; 
+        $new_libelle = "Refusé: ".$libelle; 
         $requetePrepare = PdoGSB::$monPdo->prepare(
             'UPDATE lignefraishorsforfait
             SET libelle = :newLibelle 
