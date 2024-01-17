@@ -1,7 +1,4 @@
 
-l'id utilisateur est <?=$_POST['user'] ?>
-le mois est <?=$_POST['mois'] ?>
-
 <hr>
 <div class="panel panel-primary">
     <div class="panel-heading">Fiche de frais du mois 
@@ -59,5 +56,15 @@ le mois est <?=$_POST['mois'] ?>
         ?>
     </table>
 </div>
+        
+        <div class="col-md-4">
+        <form method="post" 
+              action="index.php?uc=suivrePaiement&action=mettreEnPaiement" 
+              role="form">
+        <button class="btn btn-success" type="submit">Mettre en paiement</button>
+        </form>
+        </div>
+
+    
 
 

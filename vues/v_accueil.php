@@ -83,7 +83,7 @@ if ($role == 0){
                            class="btn btn-success btn-lg" role="button">
                             <span class="glyphicon glyphicon-pencil"></span>
                             <br>Valider fiche de frais</a>
-                        <a href=""
+                        <a href="index.php?uc=suivrePaiement&action=selectFiche"
                            class="btn btn-primary btn-lg" role="button">
                             <span class="glyphicon glyphicon-list-alt"></span>
                             <br>Suivre le paiment</a>

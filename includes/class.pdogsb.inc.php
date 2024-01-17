@@ -529,4 +529,23 @@ class PdoGsb
         $requetePrepare->execute();
         return $requetePrepare->fetchAll();
     }
+    public function selectFiche(){
+        $requetePrepare = PdoGSB::$monPdo->prepare(
+            'SELECT nom, prenom, id
+            FROM visiteur 
+            INNER JOIN fichefrais 
+            ON visiteur.id = ficheFrais.idVisiteur'
+        );
+        $requetePrepare->execute();
+        return $requetePrepare->fetchAll();
+    }
+    public function selectMoisFiche(){
+        $requetePrepare = PdoGSB::$monPdo->prepare(
+            'SELECT mois
+            FROM fichefrais
+            WHERE idEtat = "VA" '
+        );
+        $requetePrepare->execute();
+        return $requetePrepare->fetchAll();
+    }
 }
