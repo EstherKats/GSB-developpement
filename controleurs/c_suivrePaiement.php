@@ -10,8 +10,9 @@ case 'selectFiche':
 
 case 'afficheDetail':
     $idVisiteur = $_POST['visiteur'];
-    $_SESSION = $idVisiteur;
     $mois = $_POST['mois'];
+    $_SESSION['visiteur_fiche']=$idVisiteur;
+    $_SESSION['mois_fiche']=$mois;
     $lesFraisHorsForfait = $pdo->getLesFraisHorsForfait($idVisiteur, $mois);
     $lesFraisForfait = $pdo->getLesFraisForfait($idVisiteur, $mois);
     $lesInfosFicheFrais = $pdo->getLesInfosFicheFrais($idVisiteur, $mois);
@@ -25,7 +26,11 @@ case 'afficheDetail':
     break;
 
 case 'mettreEnPaiement':
-    echo "HI!!!!! Enfin!!!!";
+    $idVisiteur = $_SESSION['visiteur_fiche'];
+    $mois = $_SESSION['mois_fiche'];
+    $etat = 'RB';
+    $pdo->majEtatFicheFrais($idVisiteur, $mois, $etat);
+    require 'vues/v_remboursement.php';
     break;
 }
 ?>
