@@ -8,7 +8,7 @@ $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING);
 switch($action){
 case 'selectUser': 
     $listeUser = $pdo->selectUser() ;
-    $listeMois = $pdo->selectMois() ;
+    $listeMois = $pdo->getMois() ;
     require 'vues/v_listeUserMois.php';
     break;
 

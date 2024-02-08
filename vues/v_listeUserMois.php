@@ -16,8 +16,11 @@
     
             <select name="mois" id="mois_select" class="form-control">
             <?php 
-                foreach ($listeMois as $unMois){ ?>
-                    <option value= <?= $unMois['mois'] ?> > <?= $unMois['mois'] ?>  </option>
+                foreach ($listeMois as $unMois){
+                    $mois = $unMois['mois'];
+                    $numAnnee = substr($unMois['mois'], 0, 4);
+                    $numMois = substr( $unMois['mois'], 4, 2); ?>
+                    <option value= <?= $unMois['mois'] ?> > <?= $numMois .'/' .$numAnnee ?>  </option>
             <?php } ?>
             </select>
 

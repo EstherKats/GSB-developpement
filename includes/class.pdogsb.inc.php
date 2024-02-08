@@ -522,7 +522,7 @@ class PdoGsb
         $requetePrepare->execute();
         return $requetePrepare->fetchAll();
     }
-    public function selectMois(){
+    public function getMois(){
         $requetePrepare = PdoGSB::$monPdo->prepare(
         'SELECT *'
         .'FROM fichefrais');

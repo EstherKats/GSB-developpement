@@ -17,7 +17,7 @@
 
 <?php 
 $role = $_SESSION['role'];
-$uc = filter_input(INPUT_GET, 'uc', FILTER_SANITIZE_STRING);
+//$uc = filter_input(INPUT_GET, 'uc', FILTER_SANITIZE_STRING);
 if ($role == 0){
     ?>
 <div id="accueil">

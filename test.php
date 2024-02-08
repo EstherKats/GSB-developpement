@@ -1,13 +1,26 @@
-<?php 
-$i = 0;
-$tab = [5,10,15,20,25,30];
-$tab[$i]=0;
-var_dump($tab);
+<?php
+
+use PHPUnit\Framework\TestCase;
 
 
-for ($i=0; $i<= 5 ; $i++){
-    echo $tab[$i];
+
+class Test extends TestCase{
+    public function testMonTest(){
+        require_once 'includes/class.pdogsb.inc.php';
+        $pdo_test = PdoGsb::getPdoGsb();
+
+        $pdo = new PDO('mysql:host=127.0.0.1;port=3307;dbname=gsb2','root',''); 
+        $requetePrepare = $pdo->prepare(
+            'SELECT * 
+             FROM visiteur
+             WHERE visiteur.role = 0 '
+        );
+        $requetePrepare->execute();
+        $attendu= $requetePrepare->fetchAll();
+        
+        $resultat= $pdo_test-> selectUser();
+
+        $this->assertSame($attendu,$resultat);
+    }
 }
-
-
 ?>
