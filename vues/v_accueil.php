@@ -48,6 +48,10 @@ if ($role == 0){
                            class="btn btn-primary btn-lg" role="button">
                             <span class="glyphicon glyphicon-list-alt"></span>
                             <br>Afficher mes fiches de frais</a>
+                        <a href="index.php?uc=info&action=seeInfo"
+                           class="btn btn-primary btn-lg" role="button">
+                            <span class="glyphicon glyphicon-list-alt"></span>
+                            <br>Mes infos</a>
                     </div>
                 </div>
             </div>
@@ -87,6 +91,10 @@ if ($role == 0){
                            class="btn btn-primary btn-lg" role="button">
                             <span class="glyphicon glyphicon-list-alt"></span>
                             <br>Suivre le paiment</a>
+                        <a href="index.php?uc=info&action=seeInfo"
+                           class="btn btn-primary btn-lg" role="button">
+                            <span class="glyphicon glyphicon-list-alt"></span>
+                            <br>Mes infos</a>
                     </div>
                 </div>
             </div>

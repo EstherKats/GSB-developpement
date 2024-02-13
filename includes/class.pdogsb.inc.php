@@ -560,4 +560,16 @@ class PdoGsb
         $requetePrepare->execute();
         
     }
+    public function getInfoPers($idVisiteur){
+        $requetePrepare = PdoGsb::$monPdo->prepare(
+            'SELECT *
+            FROM visiteur 
+            WHERE visiteur.id = :unId '
+        );
+        $requetePrepare->bindParam(':unId', $idVisiteur, PDO::PARAM_STR);
+        $requetePrepare->execute();
+        return $requetePrepare->fetch();
+    }
+    
+
 }

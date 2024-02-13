@@ -12,7 +12,18 @@ case 'validation':
     $email= $_POST['email'];
     $tel= $_POST['tel'];
     $pdo->insertData($idVisiteur, $email, $tel);
-    echo "Ajouter avec succès";
+    ?>
+    
+    <div class="alert alert-info" role="alert">
+    <p>Fiche de frais mise à jour! </p>    
+    </div>
+
+    <?php
+    break;
+case 'seeInfo':
+    $idVisiteur = $_SESSION['idVisiteur'];
+    $lesInfos = $pdo->getinfoPers($idVisiteur);
+    require 'vues/v_infoPers.php';
     break;
 }
 
