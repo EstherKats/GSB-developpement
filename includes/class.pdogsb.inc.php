@@ -548,4 +548,16 @@ class PdoGsb
         $requetePrepare->execute();
         return $requetePrepare->fetchAll();
     }
+    public function insertData($idVisiteur, $email, $tel){
+        $requetePrepare = PdoGSB::$monPdo->prepare(
+            'UPDATE visiteur
+            SET visiteur.email = :unEmail, visiteur.tel = :unTel
+            WHERE visiteur.id = :unIdVisiteur'
+        );
+        $requetePrepare->bindParam(':unIdVisiteur', $idVisiteur, PDO::PARAM_STR);
+        $requetePrepare->bindParam(':unEmail', $email, PDO::PARAM_STR);
+        $requetePrepare->bindParam(':unTel', $tel, PDO::PARAM_STR);
+        $requetePrepare->execute();
+        
+    }
 }
