@@ -40,6 +40,38 @@ case 'valideConnexion':
         header('Location: index.php');
     }
     break;
+case 'inscription':
+    require 'vues/v_inscription.php';
+    break;
+case 'valideInscription' :
+        $id = $_POST['id'];
+        $nom = $_POST['nom'];
+        $prenom = $_POST['prenom'];
+        $login = $_POST['login'];
+        $mdp = $_POST['mdp'];
+        $adresse = $_POST['adresse'];            
+        $cp = $_POST['cp'];
+        $ville = $_POST['ville'];
+        $dateEmbauche = $_POST['dateEmbauche'];
+        $role = $_POST['role'];
+        
+        $newUser = [
+            "id"=> ($_POST['id']),
+            "nom" => ($_POST['nom']),
+            "prenom" => ($_POST['prenom']),
+            "login" => ($_POST['login']),
+            "mdp" => ($_POST['mdp']),
+            "adresse" => ($_POST['adresse']),
+            "cp" => ($_POST['cp']),
+            "ville" => ($_POST['ville']),
+            "dateEmbauche" => ($_POST['dateEmbauche']),
+            "role" => ($_POST['role']),
+        ];
+        var_dump($newUser);
+        $insert = $pdo->insertNewUser($newUser);
+        connecter($id, $nom, $prenom, $role);
+    require 'vues/v_accueil.php';
+    break;
 default:
     include 'vues/v_connexion.php';
     break;

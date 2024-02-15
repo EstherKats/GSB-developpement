@@ -570,6 +570,25 @@ class PdoGsb
         $requetePrepare->execute();
         return $requetePrepare->fetch();
     }
+    public function insertNewUser($newUser){
+        $requetePrepare = PdoGsb::$monPdo->prepare(
+            'INSERT INTO visiteur (id,nom,prenom,login,mdp,adresse,
+            cp,ville,dateEmbauche,role) 
+            VALUES (:unId, :unNom, :unPrenom, :unLogin, :unMdp, :uneAdresse,
+             :unCp, :uneVille, :uneDateEmbauche, :unRole)'
+        );
+        $requetePrepare->bindParam(':unId', $newUser['id'], PDO::PARAM_STR);
+        $requetePrepare->bindParam(':unNom', $newUser['nom'], PDO::PARAM_STR);
+        $requetePrepare->bindParam(':unPrenom', $newUser['prenom'], PDO::PARAM_STR);
+        $requetePrepare->bindParam(':unLogin', $newUser['login'], PDO::PARAM_STR);
+        $requetePrepare->bindParam(':unMdp', $newUser['mdp'], PDO::PARAM_STR);
+        $requetePrepare->bindParam(':uneAdresse', $newUser['adresse'], PDO::PARAM_STR);
+        $requetePrepare->bindParam(':unCp', $newUser['cp'], PDO::PARAM_STR);
+        $requetePrepare->bindParam(':uneVille', $newUser['ville'], PDO::PARAM_STR);
+        $requetePrepare->bindParam(':uneDateEmbauche', $newUser['dateEmbauche'], PDO::PARAM_STR);
+        $requetePrepare->bindParam(':unRole', $newUser['role'], PDO::PARAM_STR);
+        $requetePrepare->execute();
+    }
     
 
 }

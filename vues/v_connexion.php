@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Vue Connexion
@@ -45,6 +46,13 @@
                         </div>
                         <input class="btn btn-lg btn-success btn-block"
                                type="submit" value="Se connecter">
+                    </fieldset>
+                </form>
+                <form role="form" method="post" 
+                      action="index.php?uc=connexion&action=inscription">
+                    <fieldset>
+                        <input class="btn btn-lg btn-success btn-block"
+                               type="submit" value="S'inscrire">
                     </fieldset>
                 </form>
             </div>

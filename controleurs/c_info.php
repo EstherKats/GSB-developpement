@@ -15,7 +15,7 @@ case 'validation':
     ?>
     
     <div class="alert alert-info" role="alert">
-    <p>Fiche de frais mise à jour! </p>    
+    <p>Informations mise à jour! </p>    
     </div>
 
     <?php
