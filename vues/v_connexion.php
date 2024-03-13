@@ -48,6 +48,7 @@
                                type="submit" value="Se connecter">
                     </fieldset>
                 </form>
+                <hr>
                 <form role="form" method="post" 
                       action="index.php?uc=connexion&action=inscription">
                     <fieldset>

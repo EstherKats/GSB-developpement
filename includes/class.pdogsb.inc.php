@@ -589,6 +589,27 @@ class PdoGsb
         $requetePrepare->bindParam(':unRole', $newUser['role'], PDO::PARAM_STR);
         $requetePrepare->execute();
     }
+
+public function majData($idVisiteur, $user){
+    $requetePrepare = PdoGsb::$monPdo->prepare(
+        'UPDATE visiteur 
+        SET  nom = :unNom, prenom = :unPrenom, login = :unLogin, adresse = :uneAdresse,
+            cp = :unCp, ville = :uneVille, email = :unEmail, tel = :unTel, dateEmbauche = :uneDateEmbauche, role = :unRole
+        WHERE visiteur.id = :unIdVisiteur'
+    );
+    $requetePrepare->bindParam(':unIdVisiteur', $idVisiteur, PDO::PARAM_STR);
+    $requetePrepare->bindParam(':unNom', $user['nom'], PDO::PARAM_STR);
+    $requetePrepare->bindParam(':unPrenom', $user['prenom'], PDO::PARAM_STR);
+    $requetePrepare->bindParam(':unLogin', $user['login'], PDO::PARAM_STR);
+    $requetePrepare->bindParam(':uneAdresse', $user['adresse'], PDO::PARAM_STR);
+    $requetePrepare->bindParam(':unCp', $user['cp'], PDO::PARAM_STR);
+    $requetePrepare->bindParam(':uneVille', $user['ville'], PDO::PARAM_STR);
+    $requetePrepare->bindParam(':unEmail', $user['email'], PDO::PARAM_STR);
+    $requetePrepare->bindParam(':unTel', $user['tel'], PDO::PARAM_STR);
+    $requetePrepare->bindParam(':uneDateEmbauche', $user['dateEmbauche'], PDO::PARAM_STR);
+    $requetePrepare->bindParam(':unRole', $user['role'], PDO::PARAM_STR);
+    $requetePrepare->execute();
+}
     
 
 }

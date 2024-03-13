@@ -1,0 +1,421 @@
+\doxysection{Pdo\+Gsb Class Reference}
+\hypertarget{class_pdo_gsb}{}\label{class_pdo_gsb}\index{PdoGsb@{PdoGsb}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_pdo_gsb_a434c6bd634f9de65d72dcf84ece0e0f6}{\+\_\+\+\_\+destruct}} ()
+\item 
+\mbox{\hyperlink{class_pdo_gsb_a1182f8d30c3e4c08fa45d8437ffbb3a2}{get\+Infos\+Visiteur}} (\$login, \$mdp)
+\item 
+\mbox{\hyperlink{class_pdo_gsb_a9d2a67f6be7cdda306b94c39703757eb}{get\+Les\+Frais\+Hors\+Forfait}} (\$id\+Visiteur, \$mois)
+\item 
+\mbox{\hyperlink{class_pdo_gsb_a85ec3a9cd4d229b01aa6ff58d0bca001}{get\+Nbjustificatifs}} (\$id\+Visiteur, \$mois)
+\item 
+\mbox{\hyperlink{class_pdo_gsb_aabb95308e17c30ecaed0c097dd1ebde8}{get\+Les\+Frais\+Forfait}} (\$id\+Visiteur, \$mois)
+\item 
+\mbox{\hyperlink{class_pdo_gsb_af1532e4e39dddaa75b7b20813cc85c28}{get\+Les\+Id\+Frais}} ()
+\item 
+\mbox{\hyperlink{class_pdo_gsb_a6ca0b28cac4f0ca235f962209656d1fc}{maj\+Frais\+Forfait}} (\$id\+Visiteur, \$mois, \$les\+Frais)
+\item 
+\mbox{\hyperlink{class_pdo_gsb_a6ad333540f1363e77268c24fd212a2e1}{maj\+Nb\+Justificatifs}} (\$id\+Visiteur, \$mois, \$nb\+Justificatifs)
+\item 
+\mbox{\hyperlink{class_pdo_gsb_acb34285b17ec13b0e7459f5c111f6d1c}{est\+Premier\+Frais\+Mois}} (\$id\+Visiteur, \$mois)
+\item 
+\mbox{\hyperlink{class_pdo_gsb_a6a881f23f5e182ef89984fbcb2b11c0d}{dernier\+Mois\+Saisi}} (\$id\+Visiteur)
+\item 
+\mbox{\hyperlink{class_pdo_gsb_a04c4fd3685d2e88950b1ff3ad8faf5a7}{cree\+Nouvelles\+Lignes\+Frais}} (\$id\+Visiteur, \$mois)
+\item 
+\mbox{\hyperlink{class_pdo_gsb_ae8b424c96cf6dec43c15df6416aa03ac}{cree\+Nouveau\+Frais\+Hors\+Forfait}} ( \$id\+Visiteur, \$mois, \$libelle, \$date, \$montant)
+\item 
+\mbox{\hyperlink{class_pdo_gsb_a7e4ba1c68927d74f96178c70d78e69a8}{supprimer\+Frais\+Hors\+Forfait}} (\$id\+Frais)
+\item 
+\mbox{\hyperlink{class_pdo_gsb_a0fe576395350c3e4223a23658d5449cf}{getlibelle}} (\$id\+Frais)
+\item 
+\mbox{\hyperlink{class_pdo_gsb_aa1f756f7e7e557459df6fcc1154960c0}{refuser\+Frais}} (\$id\+Frais, \$libelle\+\_\+actuel)
+\item 
+\mbox{\hyperlink{class_pdo_gsb_aaa5986cf60a2912297d4d1f4f1a462e4}{get\+Les\+Mois\+Disponibles}} (\$id\+Visiteur)
+\item 
+\mbox{\hyperlink{class_pdo_gsb_a9c6ca5dccbd8fb81e24e8df9df698d41}{get\+Les\+Infos\+Fiche\+Frais}} (\$id\+Visiteur, \$mois)
+\item 
+\mbox{\hyperlink{class_pdo_gsb_ae5e32ce4e68a5e82110a2b44150ca890}{maj\+Etat\+Fiche\+Frais}} (\$id\+Visiteur, \$mois, \$etat)
+\item 
+\mbox{\hyperlink{class_pdo_gsb_ada329acd15d8129008a761370bfcd8bf}{select\+User}} ()
+\item 
+\mbox{\hyperlink{class_pdo_gsb_ab8c29ff2a20b9f26760bb21822022983}{get\+Mois}} ()
+\item 
+\mbox{\hyperlink{class_pdo_gsb_a39430cfbc736688c4972da2c261599fa}{select\+Fiche}} ()
+\item 
+\mbox{\hyperlink{class_pdo_gsb_a8ca31f22866a3e3295b01bf0975c379d}{select\+Mois\+Fiche}} ()
+\item 
+\mbox{\hyperlink{class_pdo_gsb_a7961e0d5b53cb9b54f73528a7c0515b4}{insert\+Data}} (\$id\+Visiteur, \$email, \$tel)
+\item 
+\mbox{\hyperlink{class_pdo_gsb_a10d6dc9a1aa8e0ce72c4815b83e4e502}{get\+Info\+Pers}} (\$id\+Visiteur)
+\item 
+\mbox{\hyperlink{class_pdo_gsb_a63e7ca96bc85bbb0a752e665c802a386}{insert\+New\+User}} (\$new\+User)
+\item 
+\mbox{\hyperlink{class_pdo_gsb_a1abe2781180c5ddfc41c8f5ef7a50118}{maj\+Data}} (\$id\+Visiteur, \$user)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_pdo_gsb_a0d5539c1b7384afdf9040c2a7cda88b5}{get\+Pdo\+Gsb}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_pdo_gsb_a434c6bd634f9de65d72dcf84ece0e0f6}\label{class_pdo_gsb_a434c6bd634f9de65d72dcf84ece0e0f6} 
+\index{PdoGsb@{PdoGsb}!\_\_destruct@{\_\_destruct}}
+\index{\_\_destruct@{\_\_destruct}!PdoGsb@{PdoGsb}}
+\doxysubsubsection{\texorpdfstring{\_\_destruct()}{\_\_destruct()}}
+{\footnotesize\ttfamily Pdo\+Gsb\+::\+\_\+\+\_\+destruct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Méthode destructeur appelée dès qu\textquotesingle{}il n\textquotesingle{}y a plus de référence sur un objet donné, ou dans n\textquotesingle{}importe quel ordre pendant la séquence d\textquotesingle{}arrêt. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_pdo_gsb_ae8b424c96cf6dec43c15df6416aa03ac}\label{class_pdo_gsb_ae8b424c96cf6dec43c15df6416aa03ac} 
+\index{PdoGsb@{PdoGsb}!creeNouveauFraisHorsForfait@{creeNouveauFraisHorsForfait}}
+\index{creeNouveauFraisHorsForfait@{creeNouveauFraisHorsForfait}!PdoGsb@{PdoGsb}}
+\doxysubsubsection{\texorpdfstring{creeNouveauFraisHorsForfait()}{creeNouveauFraisHorsForfait()}}
+{\footnotesize\ttfamily Pdo\+Gsb\+::cree\+Nouveau\+Frais\+Hors\+Forfait (\begin{DoxyParamCaption}\item[{}]{\$id\+Visiteur,  }\item[{}]{\$mois,  }\item[{}]{\$libelle,  }\item[{}]{\$date,  }\item[{}]{\$montant }\end{DoxyParamCaption})}
+
+Crée un nouveau frais hors forfait pour un visiteur un mois donné à partir des informations fournies en paramètre
+
+
+\begin{DoxyParams}[1]{Parameters}
+String & {\em \$id\+Visiteur} & ID du visiteur \\
+\hline
+String & {\em \$mois} & Mois sous la forme aaaamm \\
+\hline
+String & {\em \$libelle} & Libellé du frais \\
+\hline
+String & {\em \$date} & Date du frais au format français jj//mm/aaaa \\
+\hline
+Float & {\em \$montant} & Montant du frais\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+null 
+\end{DoxyReturn}
+\Hypertarget{class_pdo_gsb_a04c4fd3685d2e88950b1ff3ad8faf5a7}\label{class_pdo_gsb_a04c4fd3685d2e88950b1ff3ad8faf5a7} 
+\index{PdoGsb@{PdoGsb}!creeNouvellesLignesFrais@{creeNouvellesLignesFrais}}
+\index{creeNouvellesLignesFrais@{creeNouvellesLignesFrais}!PdoGsb@{PdoGsb}}
+\doxysubsubsection{\texorpdfstring{creeNouvellesLignesFrais()}{creeNouvellesLignesFrais()}}
+{\footnotesize\ttfamily Pdo\+Gsb\+::cree\+Nouvelles\+Lignes\+Frais (\begin{DoxyParamCaption}\item[{}]{\$id\+Visiteur,  }\item[{}]{\$mois }\end{DoxyParamCaption})}
+
+Crée une nouvelle fiche de frais et les lignes de frais au forfait pour un visiteur et un mois donnés
+
+Récupère le dernier mois en cours de traitement, met à \textquotesingle{}CL\textquotesingle{} son champs id\+Etat, crée une nouvelle fiche de frais avec un id\+Etat à \textquotesingle{}CR\textquotesingle{} et crée les lignes de frais forfait de quantités nulles
+
+
+\begin{DoxyParams}[1]{Parameters}
+String & {\em \$id\+Visiteur} & ID du visiteur \\
+\hline
+String & {\em \$mois} & Mois sous la forme aaaamm\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+null 
+\end{DoxyReturn}
+\Hypertarget{class_pdo_gsb_a6a881f23f5e182ef89984fbcb2b11c0d}\label{class_pdo_gsb_a6a881f23f5e182ef89984fbcb2b11c0d} 
+\index{PdoGsb@{PdoGsb}!dernierMoisSaisi@{dernierMoisSaisi}}
+\index{dernierMoisSaisi@{dernierMoisSaisi}!PdoGsb@{PdoGsb}}
+\doxysubsubsection{\texorpdfstring{dernierMoisSaisi()}{dernierMoisSaisi()}}
+{\footnotesize\ttfamily Pdo\+Gsb\+::dernier\+Mois\+Saisi (\begin{DoxyParamCaption}\item[{}]{\$id\+Visiteur }\end{DoxyParamCaption})}
+
+Retourne le dernier mois en cours d\textquotesingle{}un visiteur
+
+
+\begin{DoxyParams}[1]{Parameters}
+String & {\em \$id\+Visiteur} & ID du visiteur\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+le mois sous la forme aaaamm 
+\end{DoxyReturn}
+\Hypertarget{class_pdo_gsb_acb34285b17ec13b0e7459f5c111f6d1c}\label{class_pdo_gsb_acb34285b17ec13b0e7459f5c111f6d1c} 
+\index{PdoGsb@{PdoGsb}!estPremierFraisMois@{estPremierFraisMois}}
+\index{estPremierFraisMois@{estPremierFraisMois}!PdoGsb@{PdoGsb}}
+\doxysubsubsection{\texorpdfstring{estPremierFraisMois()}{estPremierFraisMois()}}
+{\footnotesize\ttfamily Pdo\+Gsb\+::est\+Premier\+Frais\+Mois (\begin{DoxyParamCaption}\item[{}]{\$id\+Visiteur,  }\item[{}]{\$mois }\end{DoxyParamCaption})}
+
+Teste si un visiteur possède une fiche de frais pour le mois passé en argument
+
+
+\begin{DoxyParams}[1]{Parameters}
+String & {\em \$id\+Visiteur} & ID du visiteur \\
+\hline
+String & {\em \$mois} & Mois sous la forme aaaamm\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vrai ou faux 
+\end{DoxyReturn}
+\Hypertarget{class_pdo_gsb_a10d6dc9a1aa8e0ce72c4815b83e4e502}\label{class_pdo_gsb_a10d6dc9a1aa8e0ce72c4815b83e4e502} 
+\index{PdoGsb@{PdoGsb}!getInfoPers@{getInfoPers}}
+\index{getInfoPers@{getInfoPers}!PdoGsb@{PdoGsb}}
+\doxysubsubsection{\texorpdfstring{getInfoPers()}{getInfoPers()}}
+{\footnotesize\ttfamily Pdo\+Gsb\+::get\+Info\+Pers (\begin{DoxyParamCaption}\item[{}]{\$id\+Visiteur }\end{DoxyParamCaption})}
+
+\Hypertarget{class_pdo_gsb_a1182f8d30c3e4c08fa45d8437ffbb3a2}\label{class_pdo_gsb_a1182f8d30c3e4c08fa45d8437ffbb3a2} 
+\index{PdoGsb@{PdoGsb}!getInfosVisiteur@{getInfosVisiteur}}
+\index{getInfosVisiteur@{getInfosVisiteur}!PdoGsb@{PdoGsb}}
+\doxysubsubsection{\texorpdfstring{getInfosVisiteur()}{getInfosVisiteur()}}
+{\footnotesize\ttfamily Pdo\+Gsb\+::get\+Infos\+Visiteur (\begin{DoxyParamCaption}\item[{}]{\$login,  }\item[{}]{\$mdp }\end{DoxyParamCaption})}
+
+Retourne les informations d\textquotesingle{}un visiteur
+
+
+\begin{DoxyParams}[1]{Parameters}
+String & {\em \$login} & Login du visiteur \\
+\hline
+String & {\em \$mdp} & Mot de passe du visiteur\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+l\textquotesingle{}id, le nom et le prénom sous la forme d\textquotesingle{}un tableau associatif 
+\end{DoxyReturn}
+\Hypertarget{class_pdo_gsb_aabb95308e17c30ecaed0c097dd1ebde8}\label{class_pdo_gsb_aabb95308e17c30ecaed0c097dd1ebde8} 
+\index{PdoGsb@{PdoGsb}!getLesFraisForfait@{getLesFraisForfait}}
+\index{getLesFraisForfait@{getLesFraisForfait}!PdoGsb@{PdoGsb}}
+\doxysubsubsection{\texorpdfstring{getLesFraisForfait()}{getLesFraisForfait()}}
+{\footnotesize\ttfamily Pdo\+Gsb\+::get\+Les\+Frais\+Forfait (\begin{DoxyParamCaption}\item[{}]{\$id\+Visiteur,  }\item[{}]{\$mois }\end{DoxyParamCaption})}
+
+Retourne sous forme d\textquotesingle{}un tableau associatif toutes les lignes de frais au forfait concernées par les deux arguments
+
+
+\begin{DoxyParams}[1]{Parameters}
+String & {\em \$id\+Visiteur} & ID du visiteur \\
+\hline
+String & {\em \$mois} & Mois sous la forme aaaamm\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+l\textquotesingle{}id, le libelle et la quantité sous la forme d\textquotesingle{}un tableau associatif 
+\end{DoxyReturn}
+\Hypertarget{class_pdo_gsb_a9d2a67f6be7cdda306b94c39703757eb}\label{class_pdo_gsb_a9d2a67f6be7cdda306b94c39703757eb} 
+\index{PdoGsb@{PdoGsb}!getLesFraisHorsForfait@{getLesFraisHorsForfait}}
+\index{getLesFraisHorsForfait@{getLesFraisHorsForfait}!PdoGsb@{PdoGsb}}
+\doxysubsubsection{\texorpdfstring{getLesFraisHorsForfait()}{getLesFraisHorsForfait()}}
+{\footnotesize\ttfamily Pdo\+Gsb\+::get\+Les\+Frais\+Hors\+Forfait (\begin{DoxyParamCaption}\item[{}]{\$id\+Visiteur,  }\item[{}]{\$mois }\end{DoxyParamCaption})}
+
+Retourne sous forme d\textquotesingle{}un tableau associatif toutes les lignes de frais hors forfait concernées par les deux arguments. La boucle foreach ne peut être utilisée ici car on procède à une modification de la structure itérée -\/ transformation du champ date-\/
+
+
+\begin{DoxyParams}[1]{Parameters}
+String & {\em \$id\+Visiteur} & ID du visiteur \\
+\hline
+String & {\em \$mois} & Mois sous la forme aaaamm\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+tous les champs des lignes de frais hors forfait sous la forme d\textquotesingle{}un tableau associatif 
+\end{DoxyReturn}
+\Hypertarget{class_pdo_gsb_af1532e4e39dddaa75b7b20813cc85c28}\label{class_pdo_gsb_af1532e4e39dddaa75b7b20813cc85c28} 
+\index{PdoGsb@{PdoGsb}!getLesIdFrais@{getLesIdFrais}}
+\index{getLesIdFrais@{getLesIdFrais}!PdoGsb@{PdoGsb}}
+\doxysubsubsection{\texorpdfstring{getLesIdFrais()}{getLesIdFrais()}}
+{\footnotesize\ttfamily Pdo\+Gsb\+::get\+Les\+Id\+Frais (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Retourne tous les id de la table Frais\+Forfait
+
+\begin{DoxyReturn}{Returns}
+un tableau associatif 
+\end{DoxyReturn}
+\Hypertarget{class_pdo_gsb_a9c6ca5dccbd8fb81e24e8df9df698d41}\label{class_pdo_gsb_a9c6ca5dccbd8fb81e24e8df9df698d41} 
+\index{PdoGsb@{PdoGsb}!getLesInfosFicheFrais@{getLesInfosFicheFrais}}
+\index{getLesInfosFicheFrais@{getLesInfosFicheFrais}!PdoGsb@{PdoGsb}}
+\doxysubsubsection{\texorpdfstring{getLesInfosFicheFrais()}{getLesInfosFicheFrais()}}
+{\footnotesize\ttfamily Pdo\+Gsb\+::get\+Les\+Infos\+Fiche\+Frais (\begin{DoxyParamCaption}\item[{}]{\$id\+Visiteur,  }\item[{}]{\$mois }\end{DoxyParamCaption})}
+
+Retourne les informations d\textquotesingle{}une fiche de frais d\textquotesingle{}un visiteur pour un mois donné
+
+
+\begin{DoxyParams}[1]{Parameters}
+String & {\em \$id\+Visiteur} & ID du visiteur \\
+\hline
+String & {\em \$mois} & Mois sous la forme aaaamm\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+un tableau avec des champs de jointure entre une fiche de frais et la ligne d\textquotesingle{}état 
+\end{DoxyReturn}
+\Hypertarget{class_pdo_gsb_aaa5986cf60a2912297d4d1f4f1a462e4}\label{class_pdo_gsb_aaa5986cf60a2912297d4d1f4f1a462e4} 
+\index{PdoGsb@{PdoGsb}!getLesMoisDisponibles@{getLesMoisDisponibles}}
+\index{getLesMoisDisponibles@{getLesMoisDisponibles}!PdoGsb@{PdoGsb}}
+\doxysubsubsection{\texorpdfstring{getLesMoisDisponibles()}{getLesMoisDisponibles()}}
+{\footnotesize\ttfamily Pdo\+Gsb\+::get\+Les\+Mois\+Disponibles (\begin{DoxyParamCaption}\item[{}]{\$id\+Visiteur }\end{DoxyParamCaption})}
+
+\Hypertarget{class_pdo_gsb_a0fe576395350c3e4223a23658d5449cf}\label{class_pdo_gsb_a0fe576395350c3e4223a23658d5449cf} 
+\index{PdoGsb@{PdoGsb}!getlibelle@{getlibelle}}
+\index{getlibelle@{getlibelle}!PdoGsb@{PdoGsb}}
+\doxysubsubsection{\texorpdfstring{getlibelle()}{getlibelle()}}
+{\footnotesize\ttfamily Pdo\+Gsb\+::getlibelle (\begin{DoxyParamCaption}\item[{}]{\$id\+Frais }\end{DoxyParamCaption})}
+
+Retourne les mois pour lesquel un visiteur a une fiche de frais
+
+
+\begin{DoxyParams}[1]{Parameters}
+String & {\em \$id\+Visiteur} & ID du visiteur\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+un tableau associatif de clé un mois -\/aaaamm-\/ et de valeurs l\textquotesingle{}année et le mois correspondant 
+\end{DoxyReturn}
+\Hypertarget{class_pdo_gsb_ab8c29ff2a20b9f26760bb21822022983}\label{class_pdo_gsb_ab8c29ff2a20b9f26760bb21822022983} 
+\index{PdoGsb@{PdoGsb}!getMois@{getMois}}
+\index{getMois@{getMois}!PdoGsb@{PdoGsb}}
+\doxysubsubsection{\texorpdfstring{getMois()}{getMois()}}
+{\footnotesize\ttfamily Pdo\+Gsb\+::get\+Mois (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_pdo_gsb_a85ec3a9cd4d229b01aa6ff58d0bca001}\label{class_pdo_gsb_a85ec3a9cd4d229b01aa6ff58d0bca001} 
+\index{PdoGsb@{PdoGsb}!getNbjustificatifs@{getNbjustificatifs}}
+\index{getNbjustificatifs@{getNbjustificatifs}!PdoGsb@{PdoGsb}}
+\doxysubsubsection{\texorpdfstring{getNbjustificatifs()}{getNbjustificatifs()}}
+{\footnotesize\ttfamily Pdo\+Gsb\+::get\+Nbjustificatifs (\begin{DoxyParamCaption}\item[{}]{\$id\+Visiteur,  }\item[{}]{\$mois }\end{DoxyParamCaption})}
+
+Retourne le nombre de justificatif d\textquotesingle{}un visiteur pour un mois donné
+
+
+\begin{DoxyParams}[1]{Parameters}
+String & {\em \$id\+Visiteur} & ID du visiteur \\
+\hline
+String & {\em \$mois} & Mois sous la forme aaaamm\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+le nombre entier de justificatifs 
+\end{DoxyReturn}
+\Hypertarget{class_pdo_gsb_a0d5539c1b7384afdf9040c2a7cda88b5}\label{class_pdo_gsb_a0d5539c1b7384afdf9040c2a7cda88b5} 
+\index{PdoGsb@{PdoGsb}!getPdoGsb@{getPdoGsb}}
+\index{getPdoGsb@{getPdoGsb}!PdoGsb@{PdoGsb}}
+\doxysubsubsection{\texorpdfstring{getPdoGsb()}{getPdoGsb()}}
+{\footnotesize\ttfamily static Pdo\+Gsb\+::get\+Pdo\+Gsb (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Fonction statique qui crée l\textquotesingle{}unique instance de la classe Appel \+: \$instance\+Pdo\+Gsb = \doxylink{class_pdo_gsb_a0d5539c1b7384afdf9040c2a7cda88b5}{Pdo\+Gsb\+::get\+Pdo\+Gsb()};
+
+\begin{DoxyReturn}{Returns}
+l\textquotesingle{}unique objet de la classe \doxylink{class_pdo_gsb}{Pdo\+Gsb} 
+\end{DoxyReturn}
+\Hypertarget{class_pdo_gsb_a7961e0d5b53cb9b54f73528a7c0515b4}\label{class_pdo_gsb_a7961e0d5b53cb9b54f73528a7c0515b4} 
+\index{PdoGsb@{PdoGsb}!insertData@{insertData}}
+\index{insertData@{insertData}!PdoGsb@{PdoGsb}}
+\doxysubsubsection{\texorpdfstring{insertData()}{insertData()}}
+{\footnotesize\ttfamily Pdo\+Gsb\+::insert\+Data (\begin{DoxyParamCaption}\item[{}]{\$id\+Visiteur,  }\item[{}]{\$email,  }\item[{}]{\$tel }\end{DoxyParamCaption})}
+
+\Hypertarget{class_pdo_gsb_a63e7ca96bc85bbb0a752e665c802a386}\label{class_pdo_gsb_a63e7ca96bc85bbb0a752e665c802a386} 
+\index{PdoGsb@{PdoGsb}!insertNewUser@{insertNewUser}}
+\index{insertNewUser@{insertNewUser}!PdoGsb@{PdoGsb}}
+\doxysubsubsection{\texorpdfstring{insertNewUser()}{insertNewUser()}}
+{\footnotesize\ttfamily Pdo\+Gsb\+::insert\+New\+User (\begin{DoxyParamCaption}\item[{}]{\$new\+User }\end{DoxyParamCaption})}
+
+\Hypertarget{class_pdo_gsb_a1abe2781180c5ddfc41c8f5ef7a50118}\label{class_pdo_gsb_a1abe2781180c5ddfc41c8f5ef7a50118} 
+\index{PdoGsb@{PdoGsb}!majData@{majData}}
+\index{majData@{majData}!PdoGsb@{PdoGsb}}
+\doxysubsubsection{\texorpdfstring{majData()}{majData()}}
+{\footnotesize\ttfamily Pdo\+Gsb\+::maj\+Data (\begin{DoxyParamCaption}\item[{}]{\$id\+Visiteur,  }\item[{}]{\$user }\end{DoxyParamCaption})}
+
+\Hypertarget{class_pdo_gsb_ae5e32ce4e68a5e82110a2b44150ca890}\label{class_pdo_gsb_ae5e32ce4e68a5e82110a2b44150ca890} 
+\index{PdoGsb@{PdoGsb}!majEtatFicheFrais@{majEtatFicheFrais}}
+\index{majEtatFicheFrais@{majEtatFicheFrais}!PdoGsb@{PdoGsb}}
+\doxysubsubsection{\texorpdfstring{majEtatFicheFrais()}{majEtatFicheFrais()}}
+{\footnotesize\ttfamily Pdo\+Gsb\+::maj\+Etat\+Fiche\+Frais (\begin{DoxyParamCaption}\item[{}]{\$id\+Visiteur,  }\item[{}]{\$mois,  }\item[{}]{\$etat }\end{DoxyParamCaption})}
+
+Modifie l\textquotesingle{}état et la date de modification d\textquotesingle{}une fiche de frais. Modifie le champ id\+Etat et met la date de modif à aujourd\textquotesingle{}hui.
+
+
+\begin{DoxyParams}[1]{Parameters}
+String & {\em \$id\+Visiteur} & ID du visiteur \\
+\hline
+String & {\em \$mois} & Mois sous la forme aaaamm \\
+\hline
+String & {\em \$etat} & Nouvel état de la fiche de frais\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+null 
+\end{DoxyReturn}
+\Hypertarget{class_pdo_gsb_a6ca0b28cac4f0ca235f962209656d1fc}\label{class_pdo_gsb_a6ca0b28cac4f0ca235f962209656d1fc} 
+\index{PdoGsb@{PdoGsb}!majFraisForfait@{majFraisForfait}}
+\index{majFraisForfait@{majFraisForfait}!PdoGsb@{PdoGsb}}
+\doxysubsubsection{\texorpdfstring{majFraisForfait()}{majFraisForfait()}}
+{\footnotesize\ttfamily Pdo\+Gsb\+::maj\+Frais\+Forfait (\begin{DoxyParamCaption}\item[{}]{\$id\+Visiteur,  }\item[{}]{\$mois,  }\item[{}]{\$les\+Frais }\end{DoxyParamCaption})}
+
+Met à jour la table ligne\+Frais\+Forfait Met à jour la table ligne\+Frais\+Forfait pour un visiteur et un mois donné en enregistrant les nouveaux montants
+
+
+\begin{DoxyParams}[1]{Parameters}
+String & {\em \$id\+Visiteur} & ID du visiteur \\
+\hline
+String & {\em \$mois} & Mois sous la forme aaaamm \\
+\hline
+Array & {\em \$les\+Frais} & tableau associatif de clé id\+Frais et de valeur la quantité pour ce frais\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+null 
+\end{DoxyReturn}
+\Hypertarget{class_pdo_gsb_a6ad333540f1363e77268c24fd212a2e1}\label{class_pdo_gsb_a6ad333540f1363e77268c24fd212a2e1} 
+\index{PdoGsb@{PdoGsb}!majNbJustificatifs@{majNbJustificatifs}}
+\index{majNbJustificatifs@{majNbJustificatifs}!PdoGsb@{PdoGsb}}
+\doxysubsubsection{\texorpdfstring{majNbJustificatifs()}{majNbJustificatifs()}}
+{\footnotesize\ttfamily Pdo\+Gsb\+::maj\+Nb\+Justificatifs (\begin{DoxyParamCaption}\item[{}]{\$id\+Visiteur,  }\item[{}]{\$mois,  }\item[{}]{\$nb\+Justificatifs }\end{DoxyParamCaption})}
+
+Met à jour le nombre de justificatifs de la table fiche\+Frais pour le mois et le visiteur concerné
+
+
+\begin{DoxyParams}[1]{Parameters}
+String & {\em \$id\+Visiteur} & ID du visiteur \\
+\hline
+String & {\em \$mois} & Mois sous la forme aaaamm \\
+\hline
+Integer & {\em \$nb\+Justificatifs} & Nombre de justificatifs\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+null 
+\end{DoxyReturn}
+\Hypertarget{class_pdo_gsb_aa1f756f7e7e557459df6fcc1154960c0}\label{class_pdo_gsb_aa1f756f7e7e557459df6fcc1154960c0} 
+\index{PdoGsb@{PdoGsb}!refuserFrais@{refuserFrais}}
+\index{refuserFrais@{refuserFrais}!PdoGsb@{PdoGsb}}
+\doxysubsubsection{\texorpdfstring{refuserFrais()}{refuserFrais()}}
+{\footnotesize\ttfamily Pdo\+Gsb\+::refuser\+Frais (\begin{DoxyParamCaption}\item[{}]{\$id\+Frais,  }\item[{}]{\$libelle\+\_\+actuel }\end{DoxyParamCaption})}
+
+\Hypertarget{class_pdo_gsb_a39430cfbc736688c4972da2c261599fa}\label{class_pdo_gsb_a39430cfbc736688c4972da2c261599fa} 
+\index{PdoGsb@{PdoGsb}!selectFiche@{selectFiche}}
+\index{selectFiche@{selectFiche}!PdoGsb@{PdoGsb}}
+\doxysubsubsection{\texorpdfstring{selectFiche()}{selectFiche()}}
+{\footnotesize\ttfamily Pdo\+Gsb\+::select\+Fiche (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_pdo_gsb_a8ca31f22866a3e3295b01bf0975c379d}\label{class_pdo_gsb_a8ca31f22866a3e3295b01bf0975c379d} 
+\index{PdoGsb@{PdoGsb}!selectMoisFiche@{selectMoisFiche}}
+\index{selectMoisFiche@{selectMoisFiche}!PdoGsb@{PdoGsb}}
+\doxysubsubsection{\texorpdfstring{selectMoisFiche()}{selectMoisFiche()}}
+{\footnotesize\ttfamily Pdo\+Gsb\+::select\+Mois\+Fiche (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_pdo_gsb_ada329acd15d8129008a761370bfcd8bf}\label{class_pdo_gsb_ada329acd15d8129008a761370bfcd8bf} 
+\index{PdoGsb@{PdoGsb}!selectUser@{selectUser}}
+\index{selectUser@{selectUser}!PdoGsb@{PdoGsb}}
+\doxysubsubsection{\texorpdfstring{selectUser()}{selectUser()}}
+{\footnotesize\ttfamily Pdo\+Gsb\+::select\+User (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_pdo_gsb_a7e4ba1c68927d74f96178c70d78e69a8}\label{class_pdo_gsb_a7e4ba1c68927d74f96178c70d78e69a8} 
+\index{PdoGsb@{PdoGsb}!supprimerFraisHorsForfait@{supprimerFraisHorsForfait}}
+\index{supprimerFraisHorsForfait@{supprimerFraisHorsForfait}!PdoGsb@{PdoGsb}}
+\doxysubsubsection{\texorpdfstring{supprimerFraisHorsForfait()}{supprimerFraisHorsForfait()}}
+{\footnotesize\ttfamily Pdo\+Gsb\+::supprimer\+Frais\+Hors\+Forfait (\begin{DoxyParamCaption}\item[{}]{\$id\+Frais }\end{DoxyParamCaption})}
+
+Supprime le frais hors forfait dont l\textquotesingle{}id est passé en argument
+
+
+\begin{DoxyParams}[1]{Parameters}
+String & {\em \$id\+Frais} & ID du frais\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+null 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+includes/\mbox{\hyperlink{class_8pdogsb_8inc_8php}{class.\+pdogsb.\+inc.\+php}}\end{DoxyCompactItemize}
