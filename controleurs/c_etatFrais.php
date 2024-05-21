@@ -19,6 +19,7 @@ $idVisiteur = $_SESSION['idVisiteur'];
 switch ($action) {
 case 'selectionnerMois':
     $lesMois = $pdo->getLesMoisDisponibles($idVisiteur);
+    var_dump($lesMois);
     // Afin de sélectionner par défaut le dernier mois dans la zone de liste
     // on demande toutes les clés, et on prend la première,
     // les mois étant triés décroissants
