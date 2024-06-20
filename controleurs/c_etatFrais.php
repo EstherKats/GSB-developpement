@@ -19,7 +19,6 @@ $idVisiteur = $_SESSION['idVisiteur'];
 switch ($action) {
 case 'selectionnerMois':
     $lesMois = $pdo->getLesMoisDisponibles($idVisiteur);
-    var_dump($lesMois);
     // Afin de sélectionner par défaut le dernier mois dans la zone de liste
     // on demande toutes les clés, et on prend la première,
     // les mois étant triés décroissants
@@ -35,6 +34,8 @@ case 'voirEtatFrais':
     $lesFraisHorsForfait = $pdo->getLesFraisHorsForfait($idVisiteur, $leMois);
     $lesFraisForfait = $pdo->getLesFraisForfait($idVisiteur, $leMois);
     $lesInfosFicheFrais = $pdo->getLesInfosFicheFrais($idVisiteur, $leMois);
+   
+    var_dump($lesInfosFicheFrais);
     $numAnnee = substr($leMois, 0, 4);
     $numMois = substr($leMois, 4, 2);
     $libEtat = $lesInfosFicheFrais['libEtat'];

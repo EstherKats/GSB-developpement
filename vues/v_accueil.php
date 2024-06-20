@@ -20,6 +20,7 @@ $role = $_SESSION['role'];
 //$uc = filter_input(INPUT_GET, 'uc', FILTER_SANITIZE_STRING);
 if ($role == 0){
     ?>
+
 <div id="accueil">
     <h2>
         Gestion des frais<small> - Visiteur : 
@@ -60,7 +61,7 @@ if ($role == 0){
 </div>
 
 <?php }
- else {
+ if ($role == 1){
     ?>
 
 <div id="accueil">
@@ -91,6 +92,51 @@ if ($role == 0){
                            class="btn btn-primary btn-lg" role="button">
                             <span class="glyphicon glyphicon-list-alt"></span>
                             <br>Suivre le paiment</a>
+                        <a href="index.php?uc=info&action=seeInfo"
+                           class="btn btn-primary btn-lg" role="button">
+                            <span class="glyphicon glyphicon-list-alt"></span>
+                            <br>Mes infos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php } 
+
+
+if ($role == 2){
+    ?>
+
+<div id="accueil">
+    <h2>
+        Gestion des utilisateurs<small> - Administrateur : 
+            <?php 
+            echo $_SESSION['prenom'] . ' ' . $_SESSION['nom']
+            ?></small>
+    </h2>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <span class="glyphicon glyphicon-bookmark"></span>
+                    Navigation
+                </h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-12 col-md-12">
+                        <a href="index.php?uc=user&action=consulterUser"
+                           class="btn btn-success btn-lg" role="button">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                            <br>Utilisateurs</a>
+                        <a href="index.php?uc=suivrePaiement&action=selectFiche"
+                           class="btn btn-primary btn-lg" role="button">
+                            <span class="glyphicon glyphicon-list-alt"></span>
+                            <br>Ajouter un utilisateur</a>
                         <a href="index.php?uc=info&action=seeInfo"
                            class="btn btn-primary btn-lg" role="button">
                             <span class="glyphicon glyphicon-list-alt"></span>

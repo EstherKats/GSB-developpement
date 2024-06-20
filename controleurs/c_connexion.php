@@ -67,7 +67,6 @@ case 'valideInscription' :
             "dateEmbauche" => ($_POST['dateEmbauche']),
             "role" => ($_POST['role']),
         ];
-        var_dump($newUser);
         $insert = $pdo->insertNewUser($newUser);
         connecter($id, $nom, $prenom, $role);
     require 'vues/v_accueil.php';

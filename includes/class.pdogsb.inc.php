@@ -612,4 +612,53 @@ public function majData($idVisiteur, $user){
 }
     
 
+public function CalcMontant($idVisiteur, $mois)
+    {   
+        $requetePrepare = PdoGSB::$monPdo->prepare(
+           'SELECT (fraisforfait.montant * lignefraisforfait.quantite) as "montant"
+           from fraisforfait join lignefraisforfait on fraisforfait.id = lignefraisforfait.idFraisForfait
+           where fraisforfait.id = lignefraisforfait.idFraisForfait
+           AND idvisiteur = :unIdVisiteur
+           AND mois = :unMois
+           GROUP BY fraisforfait.id' 
+        );
+
+        $requetePrepare->bindParam(':unIdVisiteur', $idVisiteur, PDO::PARAM_STR);
+        $requetePrepare->bindParam(':unMois', $mois, PDO::PARAM_STR);
+        $requetePrepare->execute();
+        return $requetePrepare->fetchAll();
+        
+    }    
+
+public function MajMontantValide($idVisiteur, $mois, $totalAmount){
+
+    $requetePrepare = PdoGSB::$monPdo->prepare(
+            'UPDATE fichefrais '
+            . 'SET fichefrais.montantValide = :totalAmount '
+            . 'WHERE fichefrais.idvisiteur = :unIdVisiteur '
+            . 'AND fichefrais.mois = :unMois '
+    );
+
+    $requetePrepare->bindParam(':totalAmount', $totalAmount, PDO::PARAM_STR);
+    $requetePrepare->bindParam(':unIdVisiteur', $idVisiteur, PDO::PARAM_STR);
+    $requetePrepare->bindParam(':unMois', $mois, PDO::PARAM_STR);
+    $requetePrepare->execute();
+}
+
+
+        /*$requetePrepare = PdoGSB::$monPdo->prepare(
+            'UPDATE fichefrais '
+            . 'SET fichefrais.montantValide = :uneQte '
+            . 'WHERE fichefrais.idvisiteur = :unIdVisiteur '
+            . 'AND fichefrais.mois = :unMois '
+        );
+        $requetePrepare->bindParam(':uneQte', $qte, PDO::PARAM_INT);
+        $requetePrepare->bindParam(':unIdVisiteur', $idVisiteur, PDO::PARAM_STR);
+        $requetePrepare->bindParam(':unMois', $mois, PDO::PARAM_STR);
+        $requetePrepare->bindParam(':idFrais', $unIdFrais, PDO::PARAM_STR);
+        $requetePrepare->execute();
+        */
+    
+
+
 }

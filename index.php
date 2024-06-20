@@ -51,6 +51,9 @@ case 'deconnexion':
 case 'info':
     include 'controleurs/c_info.php';
     break;
+case 'user':
+    include 'controleurs/c_utilisateur.php';
+    break;
 
 require 'vues/v_pied.php';
 

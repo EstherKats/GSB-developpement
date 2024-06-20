@@ -21,6 +21,10 @@ case 'voirFrais':
     $_SESSION['mois_selectionne']=$mois;
     $lesFraisHorsForfait = $pdo->getLesFraisHorsForfait($idVisiteur, $mois);
     $lesFraisForfait = $pdo->getLesFraisForfait($idVisiteur, $mois);
+    if($lesFraisHorsForfait == null){
+        require 'vues\v_pasDeFrais.php';
+        
+    } else {
     $lesInfosFicheFrais = $pdo->getLesInfosFicheFrais($idVisiteur, $mois);
     $numAnnee = substr($mois, 0, 4);
     $numMois = substr($mois, 4, 2);
@@ -29,16 +33,18 @@ case 'voirFrais':
     $nbJustificatifs = $lesInfosFicheFrais['nbJustificatifs'];
     $dateModif = dateAnglaisVersFrancais($lesInfosFicheFrais['dateModif']);
     require 'vues\v_listeFraisForfait.php';
-    require 'vues\v_listeFraisHorsForfait.php';
+    require 'vues\v_listeFraisHorsForfait.php'; }
     break;
 
 case 'actualiserFraisForfait':
     $idVisiteur = $_SESSION['visiteur_selectionne'];
     $mois = $_SESSION['mois_selectionne'];
     $lesFrais = $_POST['lesFrais'];
+    
     if (lesQteFraisValides($lesFrais)) {
         $pdo->majFraisForfait($idVisiteur, $mois, $lesFrais);
     } 
+
     $lesFraisHorsForfait = $pdo->getLesFraisHorsForfait($idVisiteur, $mois);
     $lesFraisForfait = $pdo->getLesFraisForfait($idVisiteur, $mois);
     require 'vues\v_listeFraisForfait.php';
@@ -70,6 +76,18 @@ case 'validerFiche':
     $mois = $_SESSION['mois_selectionne'];
     $etat = 'VA';
     $pdo->majEtatFicheFrais($idVisiteur, $mois, $etat);
+    $results = $pdo->CalcMontant($idVisiteur, $mois);
+
+    $totalAmount = 0;
+
+    // Sum the amounts from the result set
+    foreach ($results as $row) {
+        $totalAmount += (float)$row['montant'];
+    }
+   
+
+   $pdo->MajMontantValide($idVisiteur, $mois, $totalAmount);
+
     require 'vues\v_validation.php';
     break;
 }

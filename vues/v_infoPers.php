@@ -96,7 +96,7 @@
 
 
                     
-                <button class="btn btn-success" type="submit">Ajouter</button>
+                <button class="btn btn-success" type="submit">Modifier</button>
                 <button class="btn btn-danger" type="reset">Effacer</button>
             </fieldset>
         </form>
