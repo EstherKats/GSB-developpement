@@ -86,11 +86,11 @@ if ($role == 0){
                     <div class="col-xs-12 col-md-12">
                         <a href="index.php?uc=validerFrais&action=selectUser"
                            class="btn btn-success btn-lg" role="button">
-                            <span class="glyphicon glyphicon-pencil"></span>
+                            <span class="glyphicon glyphicon-ok"></span>
                             <br>Valider fiche de frais</a>
                         <a href="index.php?uc=suivrePaiement&action=selectFiche"
                            class="btn btn-primary btn-lg" role="button">
-                            <span class="glyphicon glyphicon-list-alt"></span>
+                            <span class="glyphicon glyphicon-euro"></span>
                             <br>Suivre le paiment</a>
                         <a href="index.php?uc=info&action=seeInfo"
                            class="btn btn-primary btn-lg" role="button">
@@ -131,11 +131,11 @@ if ($role == 2){
                     <div class="col-xs-12 col-md-12">
                         <a href="index.php?uc=user&action=consulterUser"
                            class="btn btn-success btn-lg" role="button">
-                            <span class="glyphicon glyphicon-pencil"></span>
+                            <span class="glyphicon glyphicon-user"></span>
                             <br>Utilisateurs</a>
                         <a href="index.php?uc=suivrePaiement&action=selectFiche"
                            class="btn btn-primary btn-lg" role="button">
-                            <span class="glyphicon glyphicon-list-alt"></span>
+                            <span class="glyphicon glyphicon-plus"></span>
                             <br>Ajouter un utilisateur</a>
                         <a href="index.php?uc=info&action=seeInfo"
                            class="btn btn-primary btn-lg" role="button">

@@ -60,7 +60,13 @@
                             <li <?php if ($uc == 'etatFrais') { ?>class="active"<?php } ?>>
                                 <a href="index.php?uc=etatFrais&action=selectionnerMois">
                                     <span class="glyphicon glyphicon-list-alt"></span>
-                                    Afficher mes fiches de frais
+                                    Mes fiches de frais
+                                </a>
+                            </li>
+                            <li <?php if ($uc == 'info') { ?>class="active"<?php } ?>>
+                                <a href="index.php?uc=info&action=seeInfo">
+                                <span class="glyphicon glyphicon-list"></span>
+                                Mes infos
                                 </a>
                             </li>
                             <li 
@@ -97,14 +103,20 @@
                             </li>
                             <li <?php if ($uc == 'validerFrais') { ?>class="active"<?php } ?>>
                                 <a href="index.php?uc=validerFrais&action=selectUser">
-                                    <span class="glyphicon glyphicon-pencil"></span>
+                                    <span class="glyphicon glyphicon-ok"></span>
                                     Valider fiche de frais
                                 </a>
                             </li>
                             <li <?php if ($uc == 'etatFrais') { ?>class="active"<?php } ?>>
                                 <a href="index.php?uc=suivrePaiement&action=selectFiche">
-                                    <span class="glyphicon glyphicon-list-alt"></span>
+                                    <span class="glyphicon glyphicon-euro"></span>
                                     Suivre le paiement
+                                </a>
+                            </li>
+                            <li <?php if ($uc == 'info') { ?>class="active"<?php } ?>>
+                                <a href="index.php?uc=info&action=seeInfo">
+                                <span class="glyphicon glyphicon-list"></span>
+                                Mes infos
                                 </a>
                             </li>
                             <li 
@@ -143,15 +155,21 @@
                         </a>
                     </li>
                     <li <?php if ($uc == 'validerFrais') { ?>class="active"<?php } ?>>
-                        <a href="index.php?uc=validerFrais&action=selectUser">
-                            <span class="glyphicon glyphicon-pencil"></span>
-                            Valider fiche de frais
+                        <a href="index.php?uc=user&action=consulterUser">
+                            <span class="glyphicon glyphicon-user"></span>
+                            Utilisateurs
                         </a>
                     </li>
                     <li <?php if ($uc == 'etatFrais') { ?>class="active"<?php } ?>>
                         <a href="index.php?uc=suivrePaiement&action=selectFiche">
+                            <span class="glyphicon glyphicon-plus"></span>
+                            Ajouter un utilisateur
+                        </a>
+                    </li>
+                    <li <?php if ($uc == 'info') { ?>class="active"<?php } ?>>
+                        <a href="index.php?uc=info&action=seeInfo">
                             <span class="glyphicon glyphicon-list-alt"></span>
-                            Suivre le paiement
+                            Mes infos
                         </a>
                     </li>
                     <li 

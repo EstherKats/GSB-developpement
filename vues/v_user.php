@@ -1,4 +1,3 @@
-<?php var_dump($visiteurs); ?>
 
 <div class="row">
     <div class="panel panel-info">
@@ -21,8 +20,7 @@
                 <tr>
                     <td> <?php echo $nom ?></td>
                     <td> <?php echo $prenom ?></td>
-                    <td><a href="index.php?uc=info&action=validerMajInfo<?php echo $id ?>" 
-                           onclick="return confirm('Voulez-vous vraiment supprimer ce frais?');">Mettre à jour </a></td>
+                    <td><a href="index.php?uc=user&action=detailUser&id=<?php echo $id ?>" > Détails </a></td>
                 </tr>
                 <?php } ?>
             </tbody>
