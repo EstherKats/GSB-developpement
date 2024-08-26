@@ -615,7 +615,7 @@ public function majData($idVisiteur, $user){
 public function CalcMontant($idVisiteur, $mois)
     {   
         $requetePrepare = PdoGSB::$monPdo->prepare(
-           'SELECT (fraisforfait.montant * lignefraisforfait.quantite) as "montant"
+           'SELECT sum(fraisforfait.montant * lignefraisforfait.quantite) as "montant"
            from fraisforfait join lignefraisforfait on fraisforfait.id = lignefraisforfait.idFraisForfait
            where fraisforfait.id = lignefraisforfait.idFraisForfait
            AND idvisiteur = :unIdVisiteur
@@ -645,20 +645,99 @@ public function MajMontantValide($idVisiteur, $mois, $totalAmount){
     $requetePrepare->execute();
 }
 
-
-        /*$requetePrepare = PdoGSB::$monPdo->prepare(
+    public function StatVisiteur(){
+        $requetePrepare = PdoGSB::$monPdo->prepare(
+            'SELECT count(*) as "nb" , mois as "mois"
+            FROM fichefrais
+            GROUP BY mois'
+        );
+        $requetePrepare->execute();
+        return $requetePrepare->fetchAll();
+    }
+   
+    public function majMoyen($idVisiteur, $mois, $moyen)
+    {
+        $requetePrepare = PdoGSB::$monPdo->prepare(
             'UPDATE fichefrais '
-            . 'SET fichefrais.montantValide = :uneQte '
+            . 'SET fichefrais.moyen = :moyen '
             . 'WHERE fichefrais.idvisiteur = :unIdVisiteur '
             . 'AND fichefrais.mois = :unMois '
         );
-        $requetePrepare->bindParam(':uneQte', $qte, PDO::PARAM_INT);
         $requetePrepare->bindParam(':unIdVisiteur', $idVisiteur, PDO::PARAM_STR);
         $requetePrepare->bindParam(':unMois', $mois, PDO::PARAM_STR);
-        $requetePrepare->bindParam(':idFrais', $unIdFrais, PDO::PARAM_STR);
+        $requetePrepare->bindParam(':moyen', $moyen, PDO::PARAM_INT);
         $requetePrepare->execute();
-        */
-    
+    }
+
+    public function getVisiteurs(){
+    $requetePrepare = PdoGsb::$monPdo->prepare(
+        'SELECT * FROM visiteur '
+    );
+    $requetePrepare->execute();
+    return $requetePrepare->fetchAll();
+}
+
+public function remplaceHash($id,$mdp){
+        $requetePrepare = PdoGsB::$monPdo->prepare(
+            'UPDATE visiteur '
+            . 'SET mdp = :unMdp'
+            . ' WHERE id = :unId'
+        );
+        $requetePrepare->bindParam(':unId', $id, PDO::PARAM_STR);
+        $requetePrepare->bindParam(':unMdp', $mdp, PDO::PARAM_STR);
+        $requetePrepare->execute();
+}
+
+
+public function statVisiteurMontant(){
+    $requetePrepare = PdoGsb::$monPdo->prepare(
+        ('SELECT mois as "mois", COUNT(*) as "nb", MAX(montantT) as "MontantMax"
+        FROM (SELECT sum(f.montant*l.quantite) as MontantT, mois, idVisiteur
+            from lignefraisforfait as l left join fraisforfait as f
+            on f.id=l.idfraisforfait
+            group by mois, idVisiteur
+            order by mois) AS req
+        GROUP BY mois
+        ORDER by mois')
+    );
+    $requetePrepare->execute();
+    return $requetePrepare->fetchAll();
+}
+
+public function ajoutTentative($login){
+    $requetePrepare = PdoGsB::$monPdo->prepare(
+        'UPDATE visiteur 
+        SET tentative = tentative + 1
+        WHERE login = :unLogin'
+    );
+    $requetePrepare->bindParam(':unLogin', $login, PDO::PARAM_STR);
+    $requetePrepare->execute();
+}
+
+public function recupTentative($login){
+    $requetePrepare = PdoGsB::$monPdo->prepare(
+        'SELECT tentative 
+        FROM visiteur
+        WHERE login = :unLogin'
+    );
+    $requetePrepare->bindParam(':unLogin', $login, PDO::PARAM_STR);
+    $requetePrepare->execute();
+    $result = $requetePrepare->fetch(PDO::FETCH_ASSOC);
+    $tentative = $result['tentative'] ;
+    return $tentative;
+}
+
+public function initTentative($login){
+    $requetePrepare = PdoGsB::$monPdo->prepare(
+        'UPDATE visiteur 
+        SET tentative = 0
+        WHERE login = :unLogin'
+    );
+    $requetePrepare->bindParam(':unLogin', $login, PDO::PARAM_STR);
+    $requetePrepare->execute();
+}
 
 
 }
+
+

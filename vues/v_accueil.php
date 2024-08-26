@@ -133,7 +133,7 @@ if ($role == 2){
                            class="btn btn-success btn-lg" role="button">
                             <span class="glyphicon glyphicon-user"></span>
                             <br>Utilisateurs</a>
-                        <a href="index.php?uc=suivrePaiement&action=selectFiche"
+                        <a href="index.php?uc=user&action=addUser"
                            class="btn btn-primary btn-lg" role="button">
                             <span class="glyphicon glyphicon-plus"></span>
                             <br>Ajouter un utilisateur</a>

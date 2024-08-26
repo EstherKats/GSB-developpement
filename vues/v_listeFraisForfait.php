@@ -20,7 +20,8 @@ $role = $_SESSION['role'];
 $uc = filter_input(INPUT_GET, 'uc', FILTER_SANITIZE_STRING);
 if ($role == 0){
     ?>
-<div class="row">    
+<div class="row"> 
+    
     <h2>Renseigner ma fiche de frais du mois 
         <?php echo $numMois . '-' . $numAnnee ?>
     </h2>
@@ -29,6 +30,7 @@ if ($role == 0){
         <form method="post" 
               action="index.php?uc=gererFrais&action=validerMajFraisForfait" 
               role="form">
+
             <fieldset>       
                 <?php
                 foreach ($lesFraisForfait as $unFrais) {
@@ -43,9 +45,19 @@ if ($role == 0){
                                value="<?php echo $quantite ?>" 
                                class="form-control">
                     </div>
+                    
                     <?php
                 }
                 ?>
+                <h3> Moyen de remboursement </h3>   
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="paiement"   value="0" checked>
+                        <label class="form-check-label" for="cheque">Chèque</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="paiement"  value="1">
+                        <label class="form-check-label" for="cb">Carte Bancaire</label>
+                    </div>
                 <button class="btn btn-success" type="submit">Ajouter</button>
                 <button class="btn btn-danger" type="reset">Effacer</button>
             </fieldset>
@@ -64,6 +76,9 @@ if ($role == 1){
 <div class="row">    
     <h2>Fiche de frais du mois 
         <?php echo $numMois . '-' . $numAnnee ?>
+
+
+
     </h2>
     <h3>Eléments forfaitisés</h3>
     <div class="col-md-4">
@@ -84,9 +99,14 @@ if ($role == 1){
                                value="<?php echo $quantite ?>" 
                                class="form-control">
                     </div>
+                    
+                    
                     <?php
                 }
                 ?>
+
+                
+
                 <button class="btn btn-success" type="submit">Modifier</button>
                 <button class="btn btn-danger" type="reset">Effacer</button>
             </fieldset>

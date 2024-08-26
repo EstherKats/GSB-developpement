@@ -77,13 +77,13 @@ case 'validerFiche':
     $etat = 'VA';
     $pdo->majEtatFicheFrais($idVisiteur, $mois, $etat);
     $results = $pdo->CalcMontant($idVisiteur, $mois);
-
     $totalAmount = 0;
 
     // Sum the amounts from the result set
     foreach ($results as $row) {
         $totalAmount += (float)$row['montant'];
-    }
+    } 
+    
    
 
    $pdo->MajMontantValide($idVisiteur, $mois, $totalAmount);

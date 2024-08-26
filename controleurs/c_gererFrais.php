@@ -28,8 +28,10 @@ case 'saisirFrais':
 case 'validerMajFraisForfait':
     //$lesFrais = filter_input(INPUT_POST, 'lesFrais', FILTER_SANITIZE_STRING);
     $lesFrais = $_POST['lesFrais'];
+    $moyen = $_POST['paiement'];
     if (lesQteFraisValides($lesFrais)) {
         $pdo->majFraisForfait($idVisiteur, $mois, $lesFrais);
+        $pdo->majMoyen($idVisiteur, $mois ,$moyen);
     } else {
         ajouterErreur('Les valeurs des frais doivent être numériques');
         include 'vues/v_erreurs.php';

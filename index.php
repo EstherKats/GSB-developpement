@@ -54,6 +54,9 @@ case 'info':
 case 'user':
     include 'controleurs/c_utilisateur.php';
     break;
+case 'stat':
+    include 'controleurs/c_stat.php';
+    break;
 
 require 'vues/v_pied.php';
 

@@ -249,3 +249,60 @@ function nbErreurs()
         return count($_REQUEST['erreurs']);
     }
 }
+
+function checkSize($mdp){
+    if (strlen($mdp)==8){
+            echo " mot de passe comporte 8 caractères <br />";
+            return true;    
+    }
+    echo " Le mot de passe ne comporte pas 8 caractères <br />";
+    return false;
+}
+
+function checkNumber($mdp){
+    for ($i=0; $i<strlen($mdp);$i++){
+        if (is_numeric($mdp[$i])){
+            echo " mot de passe comporte 1 numero <br />";
+            return true;
+                
+        }    
+    }
+    echo " Pas de numero <br />";
+    return false;
+}
+
+
+
+function checkMaj($mdp){
+    for ($i=0; $i<strlen($mdp);$i++){
+        if (ctype_alpha(($mdp[$i]))){
+            if ($mdp[$i]==strtoupper($mdp[$i])) {
+                echo " une maj presente <br />";
+                return true;
+            }
+        }
+    }
+    echo " Pas de maj presente <br />";
+    return false;
+}
+
+        
+function checkSpec($mdp){
+    for ($i=0; $i<strlen($mdp);$i++){
+        if (!(ctype_alnum($mdp[$i]))) {
+            echo " Un caractere special présent <br />";
+            return true;                    
+        }
+    }
+    echo " Pas de caractere special <br />";
+    return false;          
+}
+
+
+
+function blockAccount($trial){
+    if ($trial>2){
+        echo "😕 Ce compte est bloqué suite à 3 tentatives erronées 😕";
+    }
+}
+

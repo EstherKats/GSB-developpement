@@ -161,7 +161,7 @@
                         </a>
                     </li>
                     <li <?php if ($uc == 'etatFrais') { ?>class="active"<?php } ?>>
-                        <a href="index.php?uc=suivrePaiement&action=selectFiche">
+                        <a href="index.php?uc=user&action=addUser">
                             <span class="glyphicon glyphicon-plus"></span>
                             Ajouter un utilisateur
                         </a>
